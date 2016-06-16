@@ -39,8 +39,11 @@
         };
 
         $rootScope.urls = {
-            loginUrl: baseBackendUrl + '/oauth/token',
-            //loginUrl: baseBackendUrl + '/api/identityAccounts/login',
+            //loginUrl: baseBackendUrl + '/oauth/token',
+            loginUrl: baseBackendUrl + '/api/identityAccounts/login',
+            sendPassCodeUrl: baseBackendUrl + '/api/identityAccounts/SendPassCode',
+            resetPasswordByCodeUrl: baseBackendUrl + '/api/identityAccounts/ResetPasswordByCode',
+
         };
 
     });

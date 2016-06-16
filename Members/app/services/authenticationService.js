@@ -59,10 +59,11 @@
                         scope: $rootScope.privateOwnerId + ',' + $rootScope.dataOwnerId
                     }),
                 }).then(successCallback, function fail(response) {
-                    //todo:showErrorMsg
+                    //todo: $rootScope.showErrMsg(response);
+
                     return response;
                 });
-            }, 5000);
+            }, 10000);
         }
 
         function setCredentials(username, password, token) {

@@ -5,28 +5,30 @@
            .module('membersApp')
            .controller('logincontroller', logincontroller);
 
-    logincontroller.$inject = ['$scope', '$http', '$location', 'authenticationService'];
+    logincontroller.$inject = ['$scope', '$http', '$rootScope', '$location', 'authenticationService', 'callApiAnonymouslyService'];
 
-    function logincontroller($scope, $http, $location, authenticationService) {
+    function logincontroller($scope, $http, $rootScope, $location, authenticationService, callApiAnonymouslyService) {
 
         $scope.email = '';
         $scope.password = '';
 
         $scope.flLoading = false;
 
-        //$scope.dsRestorelnk = function () {
-        //    return $scope.email == '';
-        //}
-
         (function initController() {
             // reset login status
             authenticationService.clearCredentials();
         })();
 
-
         $scope.requestRestorePassCode = function () {
-            debugger
-            $location.path('/restorePassCode');
+            if ($scope.email !== '') {
+                callApiAnonymouslyService.call($rootScope.urls.sendPassCodeUrl, 'post', {
+                    username: $scope.email
+                }, function () {
+                    $location.path('/restorePassword/' + $scope.email);
+                });
+            }
+            else
+                alert('نام کاربری');//todo: $rootScope.showErrMsg('نام کاربری');
         }
 
         $scope.login = function () {
