@@ -43,7 +43,7 @@
             loginUrl: baseBackendUrl + '/api/identityAccounts/login',
             sendPassCodeUrl: baseBackendUrl + '/api/identityAccounts/SendPassCode',
             resetPasswordByCodeUrl: baseBackendUrl + '/api/identityAccounts/ResetPasswordByCode',
-
+            signupUrl: baseBackendUrl + '/api/identityAccounts/saveUser',
         };
 
     });
