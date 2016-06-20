@@ -15,6 +15,10 @@ angular.module('membersApp')
                templateUrl: "partials/signup.htm",
                controller: "signupcontroller"
            })
+            .when("/users", {
+                templateUrl: "partials/users.htm",
+                controller: "userscontroller",
+            })
            .otherwise({
                redirectTo: "/",
            })

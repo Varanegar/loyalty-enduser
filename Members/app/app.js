@@ -5,8 +5,8 @@
         // Angular modules
         'ngAnimate',
         'ngRoute',
-        'ngCookies'
-
+        'ngCookies',
+        'kendo.directives'
         // Custom modules
 
         // 3rd Party Modules
